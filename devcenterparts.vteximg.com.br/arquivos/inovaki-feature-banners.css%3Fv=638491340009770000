@@ -1,0 +1,161 @@
+/**************** CSS FEATURE BANNERS ****************/
+
+/*      BANNER PRINCIPAL      */
+#banimg {
+  width: 100%;
+}
+#banimg img {
+  height: 600px;
+}
+
+/*      BANNER LATERAL        */
+
+.carrocelLateral {
+  width: 300px;
+  height: 500px;
+}
+
+/*     CATÁLOGO DE LOGOMARCAS     */
+
+.catalogo {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  gap: 10px;
+  justify-content: flex-start;
+  background-color: #ebebf0;
+}
+
+#cardslogo {
+  width: 180px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+#imgLogoM {
+  padding: 0px;
+  width: 180px;
+  height: 200px;
+  object-position: center;
+}
+
+/*     PAGINA INTERNA DO FORNECEDOR      */
+
+#containerG {
+  margin: 0 0 5px 0;
+  width: 100%;
+}
+
+#contBanner {
+  height: 400px;
+  width: 100%;
+  padding: 10px 10px;
+}
+
+#imgBannerInterna {
+  height: 400px;
+  width: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.destaqueDoDia {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#containerDestaque {
+  padding: 20px 10px;
+}
+
+#txtDestaque {
+  background-color: red;
+  color: #fff;
+  /* padding: 0 10px; */
+  width: 280px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+#txtDestaqueDia {
+  font-family: system-ui;
+  height: 40px;
+  padding: 8px 0;
+  font-size: 25px;
+  letter-spacing: 0.8px;
+}
+
+.containerCard {
+  font-size: 14px;
+  border-radius: 5px;
+  filter: drop-shadow(1px 2px 4px rgba(0, 0, 0, 0.1));
+  margin-bottom: 10px;
+  width: 100%;
+  padding-top: 15px;
+  gap: 1%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#cardProduto {
+  border: 5px solid #d8d8d8;
+  border-radius: 10px;
+  width: 100%;
+  background-color: #fff;
+  height: 350px;
+}
+
+#imgProduto {
+  display: flex;
+  object-position: center;
+  height: 200px;
+  width: 100%;
+  padding: 0 5px;
+}
+
+.titleProdut {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+}
+
+#txttitulo {
+  margin: 0 0 10px 0;
+  font-family: system-ui;
+  text-align: center;
+  font-weight: 500;
+  font-size: 20px;
+  color: #616161;
+}
+#CodValor {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+#txtCodigo {
+  font-weight: bold;
+  align-items: center;
+}
+
+#txtValor {
+  font-family: system-ui;
+  color: red;
+  font-weight: 700;
+  font-size: 40px;
+  margin: 0;
+  display: flex;
+  position: relative;
+}
+#spanReais {
+  color: #000;
+  font-size: 15px;
+  position: absolute;
+  top: 20%;
+  right: 99%;
+}
