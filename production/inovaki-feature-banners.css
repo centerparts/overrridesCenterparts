@@ -21,11 +21,15 @@
 
 .carrocelLateral {
   width: 300px;
-  height: 500px;
+  height: auto;
 }
 
 .carrocelLateral .icon-chevron-right, .carrocelLateral.icon-chevron-left {
   display: block !important;
+}
+
+.mz-sidebar #openClose {
+  z-index: 10 !important;
 }
 
 /*     CATÁLOGO DE LOGOMARCAS     */

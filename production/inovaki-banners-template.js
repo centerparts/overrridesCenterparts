@@ -279,6 +279,7 @@ $(document).ready(() => {
   renderBanner();
   renderLogosHome();
   rBannerLateral();
+  setupCloseLateralBanner();
 });
 
 async function renderBanner() {
@@ -396,7 +397,7 @@ async function rBannerLateral() {
           ${data.map((banner) => {
             return `
               <div> 
-                 <a href="${banner.redirect_url}"><img src="https://${banner.path}" alt="${banner.key}"></a>
+                 <a href="${banner.redirect_url}"><img id="main-banner-lateral" src="https://${banner.path}" alt="${banner.key}"></a>
               </div>
             `;
           }).join(" ")}
@@ -421,6 +422,17 @@ async function rBannerLateral() {
       return '';
     }
   }
+}
+
+function setupCloseLateralBanner () {
+  const sidebar = document.querySelector('.mz-sidebar');
+  
+  sidebar.addEventListener('click', (event) => {
+    if (event.target.closest('#openClose')) {
+      const arrowDisplay = window.getComputedStyle(document.querySelector('.icon-chevron-left')).display;
+      document.getElementById('main-banner-lateral').style.display = arrowDisplay === 'none' ? 'none' : 'inline-block';
+    }
+  });
 }
 
 // async function renderPagFornecedor() {
