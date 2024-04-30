@@ -16,7 +16,6 @@
   }
 }
 
-
 /*      BANNER LATERAL        */
 
 .carrocelLateral {
@@ -24,7 +23,8 @@
   height: auto;
 }
 
-.carrocelLateral .icon-chevron-right, .carrocelLateral.icon-chevron-left {
+.carrocelLateral .icon-chevron-right,
+.carrocelLateral.icon-chevron-left {
   display: block !important;
 }
 
@@ -51,17 +51,16 @@
   max-width: 200px;
   text-align: center;
   background-color: white;
-  width: 100%;  /* Isso garante que preencha a largura disponível dentro de seu contêiner */
+  width: 100%; /* Isso garante que preencha a largura disponível dentro de seu contêiner */
   flex: 1 1 150px; /* Cresce e encolhe, mas não menor que 200px */
 }
 
 /* Media Queries para ajustar em telas menores */
 @media (max-width: 768px) {
   .cardslogo {
-    flex: 1 1 100%;  /* Cada cartão ocupa a largura total da linha em telas pequenas */
+    flex: 1 1 100%; /* Cada cartão ocupa a largura total da linha em telas pequenas */
   }
 }
-
 
 #imgLogoM {
   padding: 0px;
@@ -96,7 +95,9 @@
   flex-direction: column;
   gap: 10px;
 }
-#containerDestaque {margin: 10px 0;}
+#containerDestaque {
+  margin: 10px 0;
+}
 
 #txtDestaque {
   background-color: red;
@@ -131,7 +132,7 @@
   border-radius: 10px;
   background-color: #fff;
   width: 100%;
-  max-width: calc(100%/5);
+  max-width: calc(100% / 5);
 }
 
 #imgProduto {
@@ -142,7 +143,7 @@
   height: 150px;
 }
 
-#imgProduto img{
+#imgProduto img {
   max-width: 100%;
   height: auto !important;
   object-fit: contain;
@@ -190,4 +191,10 @@
   position: absolute;
   top: 20%;
   right: 99%;
+}
+
+/*      padding icone telefone     */
+
+.d-flex.iconTel {
+  padding-left: 10px;
 }
