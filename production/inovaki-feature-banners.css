@@ -198,3 +198,9 @@
 .d-flex.iconTel {
   padding-left: 20px;
 }
+
+/*     header contatos      */
+
+.mz-header {
+  position: unset;
+}
