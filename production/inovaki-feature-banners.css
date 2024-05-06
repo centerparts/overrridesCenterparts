@@ -201,6 +201,6 @@
 
 /*     header contatos      */
 
-.mz-header {
+.mz-header.headerUnset {
   position: unset;
 }
