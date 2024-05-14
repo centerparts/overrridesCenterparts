@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./inovaki-feature-banners.css" />
+    <title>Document</title>
+    <script>
+      var inputTelefone = document.querySelector("#itelMasc");
+
+      inputTelefone.addEventListener("input", (e) => {
+        var telefone = e.target.value;
+        inputTelefone.value = formatarTelefone(telefone);
+      });
+
+      function formatarTelefone(telefone) {
+        telefone = telefone.replace(/\D/g, "");
+
+        if (telefone.length === 10) {
+          telefone = telefone.replace(/^(\d{2})(\d{4})(\d{4})/, "($1) $2-$3");
+        } else if (telefone.length === 11) {
+          telefone = telefone.replace(/^(\d{2})(\d{5})(\d{4})/, "($1) $2-$3");
+        }
+
+        return telefone.substring(0, 15);
+      }
+    </script>
+  </head>
+  <body>
+    <form class="form__register">
+      <div class="form__register-row">
+        <div class="form__register-col">
+          <p class="form__register-label">CNPJ:</p>
+          <input
+            type="text"
+            required="required"
+            class="form__register-field"
+            data-gtm-form-interact-field-id="0"
+          />
+        </div>
+        <div class="form__register-col">
+          <p class="form__register-label">E-mail:</p>
+          <input type="text" required="required" class="form__register-field" />
+        </div>
+      </div>
+      <div class="form__register-row">
+        <div class="form__register-col">
+          <p class="form__register-label">Telefone:</p>
+          <input
+            id="itelMasc"
+            type="text"
+            required="required"
+            class="form__register-field"
+          />
+        </div>
+        <div class="form__register-col">
+          <p class="form__register-label">Vendedor:</p>
+          <input class="form__register-field" type="text" required="required" />
+        </div>
+      </div>
+      <div class="form__register-row none-input">
+        <div class="form__register-col">
+          <p class="form__register-label">CEP:</p>
+          <input
+            type="text"
+            required="required"
+            class="form__register-field disable"
+          />
+        </div>
+        <div class="form__register-col">
+          <p class="form__register-label">Rua:</p>
+          <input
+            type="text"
+            required="required"
+            disabled="disabled"
+            class="form__register-field disable"
+          />
+        </div>
+      </div>
+      <div class="form__register-row none-input">
+        <div class="form__register-col">
+          <p class="form__register-label">Razão social:</p>
+          <input type="text" required="required" class="form__register-field" />
+        </div>
+        <div class="form__register-col">
+          <p class="form__register-label">Número:</p>
+          <input
+            type="text"
+            required="required"
+            disabled="disabled"
+            class="form__register-field disable"
+          />
+        </div>
+      </div>
+      <div class="form__register-row none-input">
+        <div class="form__register-col">
+          <p class="form__register-label">Nome Fantasia:</p>
+          <input type="text" required="required" class="form__register-field" />
+        </div>
+        <div class="form__register-col">
+          <p class="form__register-label">Complemento:</p>
+          <input type="text" class="form__register-field" />
+        </div>
+      </div>
+      <div class="form__register-row none-input">
+        <div class="form__register-col">
+          <p class="form__register-label">Insc. Estadual:</p>
+          <input type="text" required="required" class="form__register-field" />
+        </div>
+        <div class="form__register-col">
+          <p class="form__register-label">Bairro:</p>
+          <input
+            type="text"
+            required="required"
+            disabled="disabled"
+            class="form__register-field disable"
+          />
+        </div>
+      </div>
+      <div class="form__register-row none-input">
+        <div class="form__register-col">
+          <p class="form__register-label">Nome:</p>
+          <input type="text" required="required" class="form__register-field" />
+        </div>
+        <div class="form__register-col">
+          <p class="form__register-label">Cidade:</p>
+          <input
+            type="text"
+            required="required"
+            disabled="disabled"
+            class="form__register-field disable"
+          />
+        </div>
+      </div>
+      <div class="form__register-row none-input">
+        <div class="form__register-col">
+          <p class="form__register-label">Sobrenome:</p>
+          <input type="text" required="required" class="form__register-field" />
+        </div>
+        <div class="form__register-col">
+          <p class="form__register-label">Estado:</p>
+          <input
+            type="text"
+            required="required"
+            disabled="disabled"
+            class="form__register-field disable"
+          />
+        </div>
+      </div>
+      <div class="form__register-row">
+        <button class="form__register--btn">CONTINUAR</button>
+      </div>
+      <!---->
+    </form>
+  </body>
+</html>

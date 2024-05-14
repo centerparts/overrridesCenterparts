@@ -201,10 +201,6 @@
 
 /*     header contatos      */
 
-.mz-header.headerUnset {
+.mz-header {
   position: unset;
-}
-
-.none-input {
-  display: none !important;
 }
