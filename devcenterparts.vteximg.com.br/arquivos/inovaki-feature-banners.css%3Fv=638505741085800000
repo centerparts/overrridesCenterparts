@@ -204,3 +204,7 @@
 .mz-header {
   position: unset;
 }
+
+.none-input {
+  display: none !important;
+}

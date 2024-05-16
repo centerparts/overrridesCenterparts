@@ -5,26 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./inovaki-feature-banners.css" />
     <title>Document</title>
-    <script>
-      var inputTelefone = document.querySelector("#itelMasc");
-
-      inputTelefone.addEventListener("input", (e) => {
-        var telefone = e.target.value;
-        inputTelefone.value = formatarTelefone(telefone);
-      });
-
-      function formatarTelefone(telefone) {
-        telefone = telefone.replace(/\D/g, "");
-
-        if (telefone.length === 10) {
-          telefone = telefone.replace(/^(\d{2})(\d{4})(\d{4})/, "($1) $2-$3");
-        } else if (telefone.length === 11) {
-          telefone = telefone.replace(/^(\d{2})(\d{5})(\d{4})/, "($1) $2-$3");
-        }
-
-        return telefone.substring(0, 15);
-      }
-    </script>
   </head>
   <body>
     <form class="form__register">
@@ -47,7 +27,7 @@
         <div class="form__register-col">
           <p class="form__register-label">Telefone:</p>
           <input
-            id="itelMasc"
+            id="itelMask"
             type="text"
             required="required"
             class="form__register-field"
@@ -152,5 +132,21 @@
       </div>
       <!---->
     </form>
+    <script>
+      var inputTelefone = document.querySelector("#itelMask");
+
+      inputTelefone.addEventListener("input", (e) => {
+        var telefone = e.target.value;
+        inputTelefone.value = phoneMask(telefone);
+      });
+      function phoneMask(value) {
+        return value
+          .replace(/\D/g, "")
+          .replace(/(\d{2})(\d)/, "($1) $2")
+          .replace(/(\d{4})(\d)/, "$1-$2")
+          .replace(/(\d{4})-(\d{1})(\d{4})/, "$1$2-$3")
+          .replace(/(-\d{4})\d+$/, "$1");
+      }
+    </script>
   </body>
 </html>
