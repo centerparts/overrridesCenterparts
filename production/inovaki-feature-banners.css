@@ -208,3 +208,13 @@
 .none-input {
   display: none !important;
 }
+
+/*       padding nas ul do menu de categorias        */
+.padding-sub {
+  padding-bottom: 15px;
+}
+
+/*     altura minima do carrossel das logomarcas      */
+.mz-system .mz-marcas__white-bg {
+  min-height: 90px;
+}

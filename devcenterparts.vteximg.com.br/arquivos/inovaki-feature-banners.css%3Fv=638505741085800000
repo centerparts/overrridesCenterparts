@@ -5,7 +5,9 @@
   width: 100%;
 }
 #banimg img {
-  height: auto;
+  /* object-fit: cover; */
+  position: relative;
+  height: 600px;
   padding-top: 65px;
 }
 
@@ -207,4 +209,8 @@
 
 .none-input {
   display: none !important;
+}
+
+.uppercase strong{
+  text-transform: uppercase;
 }
