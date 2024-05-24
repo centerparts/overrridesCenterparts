@@ -218,3 +218,17 @@
 .mz-system .mz-marcas__white-bg {
   min-height: 90px;
 }
+
+.inovaki-catalogo-online {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+#txtSobre {
+  font-size: 35px;
+  font-weight: 600;
+  color: #37326d;
+}
