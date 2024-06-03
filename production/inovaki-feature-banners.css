@@ -248,5 +248,36 @@
   color: #fff !important;
   cursor: pointer;
   font-weight: bold;
-  transition: all .2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+/* espaçamento das subcategorias */
+
+.menu-acabamento {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-acabamento:first-child {
+  padding-right: 50px;
+}
+
+.menu-acabamento-titulo {
+  margin-top: 10px !important;
+}
+
+.mz-header .mz-header__top .d-flex.justify-content-center {
+  width: auto;
+}
+
+.mz-header .mz-header__top {
+  padding: 0 30px !important;
+}
+
+.padding-subcategoria {
+  display: flex;
+  flex-direction: column;
+}
+.padding-subcategoria-titulo {
+  padding-right: 50px;
 }
