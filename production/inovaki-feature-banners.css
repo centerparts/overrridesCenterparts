@@ -259,7 +259,7 @@
 }
 
 .menu-acabamento:first-child {
-  padding-right: 50px;
+  padding-right: 60px;
 }
 
 .menu-acabamento-titulo {
@@ -279,5 +279,5 @@
   flex-direction: column;
 }
 .padding-subcategoria-titulo {
-  padding-right: 50px;
+  padding-right: 100px;
 }
