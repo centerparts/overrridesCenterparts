@@ -279,5 +279,11 @@
   flex-direction: column;
 }
 .padding-subcategoria-titulo {
-  padding-right: 100px;
+  padding-right: 100px !important;
+}
+
+@media (min-width: 992px) {
+  .mz-amazing-menu > ul > li > ul {
+    min-width: 40% !important;
+  }
 }
