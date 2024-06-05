@@ -287,3 +287,7 @@
     min-width: 40% !important;
   }
 }
+
+.mz-product-summary__image {
+  z-index: 0 !important;
+}
