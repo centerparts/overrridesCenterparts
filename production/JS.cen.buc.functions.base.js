@@ -14996,7 +14996,75 @@ function addQueryParamWithoutReloading(key, value) {
   }
 }
 
+function addToCartButtonOnPdp(sku, qtd, seller, sc){
+  var item = {
+    id: sku,
+    quantity: qtd,
+    seller: seller,
+  };
+  vtexjs.checkout.addToCart([item], null, sc).done(function(orderForm) {
+    console.log(orderForm);
+    location.reload();
+  });
+}
+
+function validateValue(input) {
+  const min = parseInt(input.min, 10);
+  const max = parseInt(input.max, 10);
+  let value = parseInt(input.value, 10);
+
+  if (isNaN(value)) {
+      value = min;
+  }
+
+  if (value < min) {
+      value = min;
+  } else if (value > max) {
+      value = max;
+  }
+
+  input.value = value;
+}
+
 $(document).ready(function () {
+  try {
+    if (skuJson){
+
+      $(".mz-product__sku-total.text-right.mz-buy-button").prepend(`
+        <style>
+        #buyQuantity {
+          padding-bottom: 5px;
+        }
+
+        #buyQuantity>input[type=number] {
+          text-align: center;
+        }
+        #buyQuantity>input[type=number]::-webkit-inner-spin-button, 
+        #buyQuantity>input[type=number]::-webkit-outer-spin-button {  
+          opacity: 1;
+        }
+        </style>
+        <div id="buyQuantity"><input type="number" min="1" max="${skuJson.skus[0].availablequantity}" value="1" oninput="validateValue(this)"></div>
+      `);
+      $(".qd-selected-sku-total").text(
+        skuJson.skus.find((e) => e.bestPriceFormated).bestPriceFormated
+      );
+      $(".product__buy-button").off();
+      $(".product__buy-button").on("click", () => {
+        // let skuSelectedOnPdp = $(".sku-selector-container input[checked]")[0].id.split("_").at(-1);
+        let skuSelectedOnPdp = 0;
+        let quantityInputPdp = parseInt($("#buyQuantity>input[type=number]").val());
+        
+        var skuOnCartQuantity = 0;
+        var skuSelected = vtexjs.checkout.orderForm.items.find(el => el.id == skuJson.skus[skuSelectedOnPdp].sku);
+        if(skuSelected)
+          skuOnCartQuantity = skuSelected.quantity;
+        addToCartButtonOnPdp(skuJson.skus[skuSelectedOnPdp].sku, skuOnCartQuantity+quantityInputPdp, skuJson.skus[skuSelectedOnPdp].sellerId, skuJson.salesChannel)
+      })
+    }
+  } catch (e) {
+    console.log("não achou skuJson");
+  }
   $(".asynchronousBuyButton").click(function (event) {
     event.preventDefault();
     event.stopImmediatePropagation();
@@ -15015,3 +15083,23 @@ $(document).ready(function () {
     handleAddToCart(buyLink);
   });
 });
+
+function setUrlParam(paramName, paramValue) {
+  const url = new URL(window.location.href);
+  url.searchParams.set(paramName, paramValue);
+  window.history.pushState({}, '', url.toString());
+}
+
+vtexjs.checkout.getOrderForm().done(function(orderForm) {
+  if(window.location.href.match("centerparts.com.br") && !window.location.pathname.match(/\/Sistema\/401|\/login/)){
+    // debugger;
+    console.log("OrderForm", orderForm, $.cookie("VTEXSC"))
+    if(!orderForm.loggedIn && window.location.pathname == "/")
+      window.location.href = "https://www.centerparts.com.br/Sistema/401";
+    else if(!orderForm.loggedIn){
+      window.location.href = `https://www.centerparts.com.br/login?ReturnUrl=${window.location.href}`;
+      if($.cookie("VTEXSC").split("=")[1] != orderForm.salesChannel)
+        setUrlParam($.cookie("VTEXSC").split("=")[0], $.cookie("VTEXSC").split("=")[1]);
+    }
+  }
+})
