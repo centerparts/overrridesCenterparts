@@ -2163,7 +2163,7 @@ try {
         unavailableShelf.each(function (index, shelf) {
           var $shelf = $(shelf);
           var href = $shelf.find(".qd_sil_img_wrapper").first().attr("href");
-          var unavailableLink = $shelf.find(".mz-product-summary__best-price");
+          var unavailableLink = $shelf.find(".mz-product-summary__best-price_aki");
           if (unavailableLink.length) {
             unavailableLink.off("click").on("click", function () {
               window.location.href = href;
@@ -4159,7 +4159,7 @@ try {
     //       var pri = parseFloat(prices[i].innerHTML.substring(2).replace(",", "."));
     //       total = total + (inp * pri);
     //     }
-    //     document.querySelector(".qd-selected-sku-total").innerHTML = ("R$ " + total.toFixed(2)).replace(".", ",");
+    //     document.querySelector(".qd-selected-sku-total_aki").innerHTML = ("R$ " + total.toFixed(2)).replace(".", ",");
     //   }
     //   );
     // },
@@ -15046,8 +15046,8 @@ $(document).ready(function () {
         </style>
         <div id="buyQuantity"><input type="number" min="1" max="${skuJson.skus[0].availablequantity}" value="1" oninput="validateValue(this)"></div>
       `);
-      $(".qd-selected-sku-total").text(
-        skuJson.skus.find((e) => e.bestPriceFormated).bestPriceFormated
+      $(".qd-selected-sku-total").text(        
+        skuJson.skus.find((e) => e.listPriceFormated).listPriceFormated
       );
       $(".product__buy-button").off();
       $(".product__buy-button").on("click", () => {
