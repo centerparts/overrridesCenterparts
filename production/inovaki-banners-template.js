@@ -176,7 +176,7 @@ const logoHome = [
     banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
     path: "https://centerparts.vteximg.com.br/arquivos/2m-plastic.png",
     key: "1713295510915-photomode_11012024_184113.png",
-  },
+  }
 ];
 
 const carouselLateral = [
@@ -269,7 +269,7 @@ const carouselLateral = [
     banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
     path: "https://barataopecasautomotivas.com.br/wp-content/uploads/2023/07/Frame-190536.jpg.webp",
     key: "1713295510915-photomode_11012024_184113.png",
-  },
+  }
 ];
 
 $(document).ready(() => {
@@ -283,13 +283,12 @@ $(document).ready(() => {
 });
 
 async function renderBanner() {
-  const menuBanners = document.querySelector(".mz-system");
+  const menuBanners = document.querySelector(".inovaki-new-home .mz-system");
 
   if (menuBanners) {
+  
     try {
-      let response = await fetch(
-        `https://centerparts-api.inovaki.com.br/banners/banner-principal`
-      );
+      let response = await fetch(`https://centerparts-api.inovaki.com.br/banners/banner-principal`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -299,15 +298,13 @@ async function renderBanner() {
         menuBanners.insertAdjacentHTML(
           "afterbegin",
           `<div class="carrouselHome">
-          ${data
-            .map((banner) => {
-              return `
+          ${data.map((banner) => {
+            return `
             <div>
               <a id="banimg" href="${banner.redirect_url}"><img src="https://${banner.path}" alt="${banner.key}" /></a>
             </div>
             `;
-            })
-            .join(" ")}
+          }).join(" ")}
           </div>`
         );
 
@@ -326,20 +323,17 @@ async function renderBanner() {
       }
     } catch (error) {
       console.error("Fetch error:", error);
-      return "";
+      return '';
     }
   }
 }
 
 async function renderLogosHome() {
-  const logosSlides = document.querySelector(
-    ".inovaki-new-home .mz-slider-marcas"
-  );
+  const logosSlides = document.querySelector(".inovaki-new-home .mz-slider-marcas");
   if (logosSlides) {
+
     try {
-      let response = await fetch(
-        `https://centerparts-api.inovaki.com.br/banners/logomarca-home`
-      );
+      let response = await fetch(`https://centerparts-api.inovaki.com.br/banners/logomarca-home`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -348,15 +342,13 @@ async function renderLogosHome() {
       if (data && data.length > 0) {
         logosSlides.insertAdjacentHTML(
           "afterbegin",
-          `${data
-            .map((logo) => {
-              return `
+          `${data.map((logo) => {
+            return `
             <ul>
               <li><a class="mx-auto" href=""><img src="https://${logo.path}" alt="${logo.key}" /></a></li>
             </ul>
             `;
-            })
-            .join(" ")}`
+          }).join(" ")}`
         );
 
         $(".inovaki-new-home .mz-slider-marcas").slick({
@@ -367,22 +359,22 @@ async function renderLogosHome() {
             {
               breakpoint: 900,
               settings: {
-                slidesToShow: 5,
-              },
+                slidesToShow: 5
+              }
             },
             {
               breakpoint: 480,
               settings: {
-                slidesToShow: 2,
-              },
-            },
+                slidesToShow: 2
+              }
+            }
           ],
           infinite: true,
         });
       }
     } catch (error) {
       console.error("Fetch error:", error);
-      return "";
+      return '';
     }
   }
 }
@@ -390,10 +382,9 @@ async function renderLogosHome() {
 async function rBannerLateral() {
   const bannerLateral = document.querySelector(".mz-sidebar");
   if (bannerLateral) {
+
     try {
-      let response = await fetch(
-        `https://centerparts-api.inovaki.com.br/banners/banner-menu-lateral`
-      );
+      let response = await fetch(`https://centerparts-api.inovaki.com.br/banners/banner-menu-lateral`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -403,15 +394,13 @@ async function rBannerLateral() {
         bannerLateral.insertAdjacentHTML(
           "beforeend",
           `<div class="carrocelLateral">
-          ${data
-            .map((banner) => {
-              return `
+          ${data.map((banner) => {
+            return `
               <div> 
                  <a href="${banner.redirect_url}"><img id="main-banner-lateral" src="https://${banner.path}" alt="${banner.key}"></a>
               </div>
             `;
-            })
-            .join(" ")}
+          }).join(" ")}
           </div>`
         );
 
@@ -430,21 +419,18 @@ async function rBannerLateral() {
       }
     } catch (error) {
       console.error("Fetch error:", error);
-      return "";
+      return '';
     }
   }
 }
 
-function setupCloseLateralBanner() {
-  const sidebar = document.querySelector(".mz-sidebar");
-
-  sidebar.addEventListener("click", (event) => {
-    if (event.target.closest("#openClose")) {
-      const arrowDisplay = window.getComputedStyle(
-        document.querySelector(".icon-chevron-left")
-      ).display;
-      document.getElementById("main-banner-lateral").style.display =
-        arrowDisplay === "none" ? "none" : "inline-block";
+function setupCloseLateralBanner () {
+  const sidebar = document.querySelector('.mz-sidebar');
+  
+  sidebar.addEventListener('click', (event) => {
+    if (event.target.closest('#openClose')) {
+      const arrowDisplay = window.getComputedStyle(document.querySelector('.icon-chevron-left')).display;
+      document.getElementById('main-banner-lateral').style.display = arrowDisplay === 'none' ? 'none' : 'inline-block';
     }
   });
 }
@@ -524,79 +510,98 @@ function setupCloseLateralBanner() {
 // }
 
 async function renderPagFornecedor() {
-  const importPagFornecedor = document.querySelector(
-    ".inovaki-new-catalog main .container"
-  );
-  if (infoCatalogo) {
-    const promises = infoCatalogo.map(async (logos) => {
-      try {
-        let response = await fetch(
-          `/api/catalog_system/pub/products/search?fq=productId:2062504`
-        );
+  const importPagFornecedor = document.querySelector("main > div.container.mz-result");
+  if (importPagFornecedor) {
+
+    try {
+      if(getUrlParam("bannerId")){
+        let response = await fetch(`https://centerparts-api.inovaki.com.br/banners/banner-principal-do-fornecedor?supplierId=${getUrlParam("bannerId")}`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
 
-        if (data && data.length > 0) {
-          return `
-            <div id="cardProduto">
-              <div id="imgProduto">
-                <img src="${data[0].items[0].images[0].imageUrl}" alt="" />
-              </div>
-              <div class="titleProdut">
-                <p id="txttitulo">
-                  ${data[0].productName}
-                </p>
-                <div id="CodValor">
-                  <p id="txtCodigo">${data[0].productReferenceCode}</p>
-                  <p id="txtValor"><span id="spanReais">R$</span>${data[0].items[0].sellers[0].commertialOffer.Price}</p>
+        importPagFornecedor.insertAdjacentHTML("afterbegin", `
+          <div id="containerG">
+            <div id="contBanner">
+              <img id="imgBannerInterna"
+                src="https://${data[0].path}"
+                alt=""/>
+            </div>
+          </div>
+          `
+        );
+
+        let response2 = await fetch(`https://centerparts-api.inovaki.com.br/products/${getUrlParam("bannerId")}`);
+        if (!response2.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data2 = await response2.json();
+        debugger
+
+        const promises = data2.map(async (product) => {
+          try {
+            let response = await fetch(`/api/catalog_system/pub/products/search?fq=productId:${product.product_id}`);
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+    
+            if (data && data.length > 0) {
+              return `
+                <div id="cardProduto">
+                  <div id="imgProduto">
+                    <img src="${data[0].items[0].images[0].imageUrl}" alt="" />
+                  </div>
+                  <div class="titleProdut">
+                    <p id="txttitulo">
+                      ${data[0].productName}
+                    </p>
+                    <div id="CodValor">
+                      <p id="txtCodigo">${data[0].productReferenceCode}</p>
+                      <p id="txtValor"><span id="spanReais">R$</span>${data[0].items[0].sellers[0].commertialOffer.Price}</p>
+                    </div>
+                  </div>
+                </div>`;
+            }
+          } catch (error) {
+            console.error("Fetch error:", error);
+            return '';
+          }
+        });
+    
+        const cards = await Promise.all(promises);
+    
+        if(cards.some(result => result !== undefined)){
+          const htmlString = cards.join('');
+    
+          importPagFornecedor.insertAdjacentHTML("beforeend", `
+            <div class="destaqueDoDia">
+              <div id="containerDestaque">
+                <div id="txtDestaque">
+                  <h1 id="txtDestaqueDia">Destaques do dia</h1>
                 </div>
               </div>
-            </div>`;
+              <div class="containerCard">
+                ${htmlString}
+              </div>
+            </div>
+            `
+          );
         }
-      } catch (error) {
-        console.error("Fetch error:", error);
-        return "";
       }
-    });
-
-    const cards = await Promise.all(promises);
-    const htmlString = cards.join("");
-
-    importPagFornecedor.insertAdjacentHTML(
-      "afterbegin",
-      `
-      <div id="containerG">
-        <div id="contBanner">
-          <img id="imgBannerInterna"
-            src="https://mwcompany-adv.transforms.svdcdn.com/production/wpImported/2019-2021/red-mk7-gti-lowered-apr-tuned-remus-exhaust-adv1-flowspec-wheels-banner.jpg?w=1200&h=630&q=82&auto=format&fit=crop&dm=1696443183&s=24b29dafcf6a8a0c3609359f20bbf1b0"
-            alt=""/>
-        </div>
-      </div>
-      <div class="destaqueDoDia">
-        <div id="containerDestaque">
-          <div id="txtDestaque">
-            <h1 id="txtDestaqueDia">Destaques do dia</h1>
-          </div>
-        </div>
-        <div class="containerCard">
-          ${htmlString}
-        </div>
-      </div>`
-    );
+    } catch (error) {
+      console.error(error);
+    }
   }
 }
 
 async function renderCatalogo() {
-  const importCatalogo = document.querySelector(
-    ".inovaki-new-catalog main .container"
-  );
+  const importCatalogo = document.querySelector(".inovaki-new-catalog main .container");
   if (importCatalogo) {
+
     try {
-      let response = await fetch(
-        `https://centerparts-api.inovaki.com.br/banners/ordenacao-de-fornecedores`
-      );
+      let response = await fetch(`https://centerparts-api.inovaki.com.br/banners/ordenacao-de-fornecedores`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -606,21 +611,30 @@ async function renderCatalogo() {
         importCatalogo.insertAdjacentHTML(
           "afterbegin",
           `<div class="catalogo" >
-            ${data
-              .map((logos) => {
-                return `
+            ${data.map((logos) => {
+              return `
               <div class="cardslogo" >
-                <a href="${logos.redirect_url}"><img id="imgLogoM" src="https://${logos.path}" alt="${logos.key}" ></img></a>
+                <a href="${appendUrlParam(logos)}"><img id="imgLogoM" src="https://${logos.path}" alt="${logos.key}" ></img></a>
               </div>
               `;
-              })
-              .join(" ")}
+            }).join(" ")}
           </div>`
         );
       }
     } catch (error) {
       console.error("Fetch error:", error);
-      return "";
+      return '';
     }
   }
+}
+
+function getUrlParam(paramName) {
+  const params = new URLSearchParams(window.location.search);
+  return params.has(paramName) ? params.get(paramName) : false;
+}
+
+function appendUrlParam(logos) {
+  const separator = logos.redirect_url.includes('?') ? '&' : '?';
+  const updatedUrl = `${logos.redirect_url}${separator}bannerId=${logos.banner_id}`;
+  return updatedUrl;
 }
