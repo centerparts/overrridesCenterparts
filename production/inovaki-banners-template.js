@@ -1,277 +1,3 @@
-/*************** SCRIPT AQUI ***************/
-
-const infoCatalogo = [
-  {
-    id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    title: "Banner Title",
-    position: 1,
-    redirect_url: "www.google.com",
-    visible: true,
-    banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    path: "https://http2.mlstatic.com/D_NQ_NP_965161-MLB42008351597_052020-O.webp",
-    key: "1713295510915-photomode_11012024_184113.png",
-  },
-  {
-    id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    title: "Banner Title",
-    position: 2,
-    redirect_url: "www.google.com",
-    visible: true,
-    banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    path: "https://http2.mlstatic.com/D_NQ_NP_640313-MLB42008381113_052020-O.webp",
-    key: "1713295510915-photomode_11012024_184113.png",
-  },
-  {
-    id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    title: "Banner Title",
-    position: 3,
-    redirect_url: "www.google.com",
-    visible: true,
-    banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    path: "https://http2.mlstatic.com/D_NQ_NP_818656-MLB42008371420_052020-O.webp",
-    key: "1713295510915-photomode_11012024_184113.png",
-  },
-  {
-    id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    title: "Banner Title",
-    position: 1,
-    redirect_url: "www.google.com",
-    visible: true,
-    banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    path: "https://http2.mlstatic.com/D_NQ_NP_965161-MLB42008351597_052020-O.webp",
-    key: "1713295510915-photomode_11012024_184113.png",
-  },
-  {
-    id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    title: "Banner Title",
-    position: 2,
-    redirect_url: "www.google.com",
-    visible: true,
-    banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    path: "https://http2.mlstatic.com/D_NQ_NP_640313-MLB42008381113_052020-O.webp",
-    key: "1713295510915-photomode_11012024_184113.png",
-  },
-];
-
-const infoBanner = [
-  {
-    id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    title: "Banner Title",
-    position: 1,
-    redirect_url: "www.google.com",
-    visible: true,
-    banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    path: "https://www.topgear.com/sites/default/files/cars-car/image/2019/12/images_original_15164-volkswagengolfgtiperformance.jpg",
-    key: "1713295510915-photomode_11012024_184113.png",
-  },
-  {
-    id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    title: "Banner Title",
-    position: 2,
-    redirect_url: "www.google.com",
-    visible: true,
-    banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    path: "https://www.topgear.com/sites/default/files/cars-car/image/2019/12/images_original_15164-volkswagengolfgtiperformance.jpg",
-    key: "1713295510915-photomode_11012024_184113.png",
-  },
-  {
-    id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    title: "Banner Title",
-    position: 3,
-    redirect_url: "www.google.com",
-    visible: true,
-    banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    path: "https://www.topgear.com/sites/default/files/cars-car/image/2019/12/images_original_15164-volkswagengolfgtiperformance.jpg",
-    key: "1713295510915-photomode_11012024_184113.png",
-  },
-];
-
-const logoHome = [
-  {
-    id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    title: "Banner Title",
-    position: 1,
-    redirect_url: "www.google.com",
-    visible: true,
-    banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    path: "https://centerparts.vteximg.com.br/arquivos/2m-plastic.png",
-    key: "1713295510915-photomode_11012024_184113.png",
-  },
-  {
-    id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    title: "Banner Title",
-    position: 2,
-    redirect_url: "www.google.com",
-    visible: true,
-    banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    path: "https://centerparts.vteximg.com.br/arquivos/2m-plastic.png",
-    key: "1713295510915-photomode_11012024_184113.png",
-  },
-  {
-    id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    title: "Banner Title",
-    position: 3,
-    redirect_url: "www.google.com",
-    visible: true,
-    banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    path: "https://centerparts.vteximg.com.br/arquivos/2m-plastic.png",
-    key: "1713295510915-photomode_11012024_184113.png",
-  },
-  {
-    id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    title: "Banner Title",
-    position: 3,
-    redirect_url: "www.google.com",
-    visible: true,
-    banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    path: "https://centerparts.vteximg.com.br/arquivos/2m-plastic.png",
-    key: "1713295510915-photomode_11012024_184113.png",
-  },
-  {
-    id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    title: "Banner Title",
-    position: 3,
-    redirect_url: "www.google.com",
-    visible: true,
-    banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    path: "https://centerparts.vteximg.com.br/arquivos/2m-plastic.png",
-    key: "1713295510915-photomode_11012024_184113.png",
-  },
-  {
-    id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    title: "Banner Title",
-    position: 3,
-    redirect_url: "www.google.com",
-    visible: true,
-    banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    path: "https://centerparts.vteximg.com.br/arquivos/2m-plastic.png",
-    key: "1713295510915-photomode_11012024_184113.png",
-  },
-  {
-    id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    title: "Banner Title",
-    position: 3,
-    redirect_url: "www.google.com",
-    visible: true,
-    banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    path: "https://centerparts.vteximg.com.br/arquivos/2m-plastic.png",
-    key: "1713295510915-photomode_11012024_184113.png",
-  },
-  {
-    id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    title: "Banner Title",
-    position: 3,
-    redirect_url: "www.google.com",
-    visible: true,
-    banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    path: "https://centerparts.vteximg.com.br/arquivos/2m-plastic.png",
-    key: "1713295510915-photomode_11012024_184113.png",
-  },
-  {
-    id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    title: "Banner Title",
-    position: 3,
-    redirect_url: "www.google.com",
-    visible: true,
-    banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    path: "https://centerparts.vteximg.com.br/arquivos/2m-plastic.png",
-    key: "1713295510915-photomode_11012024_184113.png",
-  }
-];
-
-const carouselLateral = [
-  {
-    id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    title: "Banner Title",
-    position: 1,
-    redirect_url: "www.google.com",
-    visible: true,
-    banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    path: "https://barataopecasautomotivas.com.br/wp-content/uploads/2023/07/Frame-190536.jpg.webp",
-    key: "1713295510915-photomode_11012024_184113.png",
-  },
-  {
-    id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    title: "Banner Title",
-    position: 2,
-    redirect_url: "www.google.com",
-    visible: true,
-    banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    path: "https://barataopecasautomotivas.com.br/wp-content/uploads/2023/07/Frame-190536.jpg.webp",
-    key: "1713295510915-photomode_11012024_184113.png",
-  },
-  {
-    id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    title: "Banner Title",
-    position: 3,
-    redirect_url: "www.google.com",
-    visible: true,
-    banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    path: "https://barataopecasautomotivas.com.br/wp-content/uploads/2023/07/Frame-190536.jpg.webp",
-    key: "1713295510915-photomode_11012024_184113.png",
-  },
-  {
-    id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    title: "Banner Title",
-    position: 3,
-    redirect_url: "www.google.com",
-    visible: true,
-    banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    path: "https://barataopecasautomotivas.com.br/wp-content/uploads/2023/07/Frame-190536.jpg.webp",
-    key: "1713295510915-photomode_11012024_184113.png",
-  },
-  {
-    id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    title: "Banner Title",
-    position: 3,
-    redirect_url: "www.google.com",
-    visible: true,
-    banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    path: "https://barataopecasautomotivas.com.br/wp-content/uploads/2023/07/Frame-190536.jpg.webp",
-    key: "1713295510915-photomode_11012024_184113.png",
-  },
-  {
-    id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    title: "Banner Title",
-    position: 3,
-    redirect_url: "www.google.com",
-    visible: true,
-    banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    path: "https://barataopecasautomotivas.com.br/wp-content/uploads/2023/07/Frame-190536.jpg.webp",
-    key: "1713295510915-photomode_11012024_184113.png",
-  },
-  {
-    id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    title: "Banner Title",
-    position: 3,
-    redirect_url: "www.google.com",
-    visible: true,
-    banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    path: "https://barataopecasautomotivas.com.br/wp-content/uploads/2023/07/Frame-190536.jpg.webp",
-    key: "1713295510915-photomode_11012024_184113.png",
-  },
-  {
-    id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    title: "Banner Title",
-    position: 3,
-    redirect_url: "www.google.com",
-    visible: true,
-    banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    path: "https://barataopecasautomotivas.com.br/wp-content/uploads/2023/07/Frame-190536.jpg.webp",
-    key: "1713295510915-photomode_11012024_184113.png",
-  },
-  {
-    id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    title: "Banner Title",
-    position: 3,
-    redirect_url: "www.google.com",
-    visible: true,
-    banner_id: "538b5e4f-0723-43fe-a454-20bc88770089",
-    path: "https://barataopecasautomotivas.com.br/wp-content/uploads/2023/07/Frame-190536.jpg.webp",
-    key: "1713295510915-photomode_11012024_184113.png",
-  }
-];
-
 $(document).ready(() => {
   renderCatalogo();
   renderPagFornecedor();
@@ -435,109 +161,18 @@ function setupCloseLateralBanner () {
   });
 }
 
-// async function renderPagFornecedor() {
-//   const importPagFornecedor = document.querySelector(".inovaki-new-catalog main .container");
-//   if (importPagFornecedor) {
-
-//     try {
-//       let response = await fetch(`https://centerparts-api.inovaki.com.br/banners/banner-menu-lateral`);
-//       if (!response.ok) {
-//         throw new Error(`HTTP error! status: ${response.status}`);
-//       }
-//       const data = await response.json();
-
-//       if (data && data.length > 0) {
-
-//         const promises = data.map(async (logos) => {
-//           try {
-//             let response = await fetch(`/api/catalog_system/pub/products/search?fq=productId:${INFO_PRODUCT_ID}`);
-//             if (!response.ok) {
-//               throw new Error(`HTTP error! status: ${response.status}`);
-//             }
-//             const dataVtex = await response.json();
-
-//             if (dataVtex && dataVtex.length > 0) {
-//               return `
-//                 <div id="cardProduto">
-//                   <div id="imgProduto">
-//                     <img src="${dataVtex[0].items[0].images[0].imageUrl}" alt="" />
-//                   </div>
-//                   <div class="titleProdut">
-//                     <p id="txttitulo">
-//                       ${dataVtex[0].productName}
-//                     </p>
-//                     <div id="CodValor">
-//                       <p id="txtCodigo">${dataVtex[0].productReferenceCode}</p>
-//                       <p id="txtValor"><span id="spanReais">R$</span>${dataVtex[0].items[0].sellers[0].commertialOffer.Price}</p>
-//                     </div>
-//                   </div>
-//                 </div>`;
-//             }
-//           } catch (error) {
-//             console.error("Fetch error:", error);
-//             return '';
-//           }
-//         });
-
-//         const cards = await Promise.all(promises);
-//         const htmlString = cards.join('');
-
-//         importPagFornecedor.insertAdjacentHTML("afterbegin", `
-//           <div id="containerG">
-//             <div id="contBanner">
-//               <img id="imgBannerInterna"
-//                 src="${IMAGE_BANNER_FORNECEDOR}"
-//                 alt=""/>
-//             </div>
-//           </div>
-//           <div class="destaqueDoDia">
-//             <div id="containerDestaque">
-//               <div id="txtDestaque">
-//                 <h1 id="txtDestaqueDia">Destaques do dia</h1>
-//               </div>
-//             </div>
-//             <div class="containerCard">
-//               ${htmlString}
-//             </div>
-//           </div>
-//         `);
-//       }
-//     } catch (error) {
-//       console.error("Fetch error:", error);
-//       return '';
-//     }
-//   }
-// }
-
 async function renderPagFornecedor() {
   const importPagFornecedor = document.querySelector("main > div.container.mz-result");
   if (importPagFornecedor) {
 
     try {
       if(getUrlParam("bannerId")){
-        let response = await fetch(`https://centerparts-api.inovaki.com.br/banners/banner-principal-do-fornecedor?supplierId=${getUrlParam("bannerId")}`);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-
-        importPagFornecedor.insertAdjacentHTML("afterbegin", `
-          <div id="containerG">
-            <div id="contBanner">
-              <img id="imgBannerInterna"
-                src="https://${data[0].path}"
-                alt=""/>
-            </div>
-          </div>
-          `
-        );
 
         let response2 = await fetch(`https://centerparts-api.inovaki.com.br/products/${getUrlParam("bannerId")}`);
         if (!response2.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data2 = await response2.json();
-        debugger
 
         const promises = data2.map(async (product) => {
           try {
@@ -575,7 +210,7 @@ async function renderPagFornecedor() {
         if(cards.some(result => result !== undefined)){
           const htmlString = cards.join('');
     
-          importPagFornecedor.insertAdjacentHTML("beforeend", `
+          importPagFornecedor.insertAdjacentHTML("afterbegin", `
             <div class="destaqueDoDia">
               <div id="containerDestaque">
                 <div id="txtDestaque">
@@ -589,6 +224,23 @@ async function renderPagFornecedor() {
             `
           );
         }
+
+        let response = await fetch(`https://centerparts-api.inovaki.com.br/banners/banner-principal-do-fornecedor?supplierId=${getUrlParam("bannerId")}`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+
+        importPagFornecedor.insertAdjacentHTML("afterbegin", `
+          <div id="containerG">
+            <div id="contBanner">
+              <img id="imgBannerInterna"
+                src="https://${data[0].path}"
+                alt=""/>
+            </div>
+          </div>
+          `
+        );
       }
     } catch (error) {
       console.error(error);
