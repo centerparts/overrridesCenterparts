@@ -37,10 +37,11 @@
 .catalogo {
   display: flex;
   gap: 10px;
-  justify-content: space-between;
+  justify-content: flex-start;
   background-color: #ebebf0;
   flex-wrap: wrap;
   width: 100%;
+  margin: 20px 0;
 }
 
 .cardslogo {
@@ -78,13 +79,11 @@
 }
 
 #contBanner {
-  height: 400px;
   width: 100%;
-  margin-top: 10px;
 }
 
 #imgBannerInterna {
-  height: 400px;
+  height: auto;
   width: 100%;
   border-radius: 5px;
   object-fit: cover;
@@ -285,5 +284,10 @@
 @media (min-width: 992px) {
   .mz-amazing-menu > ul > li > ul {
     min-width: 40% !important;
+    height: 860px !important;
   }
+}
+
+.mz-product-summary__image {
+  z-index: 0 !important;
 }
