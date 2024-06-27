@@ -289,7 +289,6 @@
 @media (min-width: 992px) {
   .mz-amazing-menu > ul > li > ul {
     min-width: 40% !important;
-    height: 860px !important;
   }
 }
 
