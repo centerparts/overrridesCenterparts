@@ -132,6 +132,9 @@
   background-color: #fff;
   width: 100%;
   max-width: calc(100% / 5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #imgProduto {
@@ -146,6 +149,7 @@
   max-width: 100%;
   height: auto !important;
   object-fit: contain;
+  padding: 20px;
 }
 
 .titleProdut {
