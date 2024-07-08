@@ -140,7 +140,7 @@
 #imgProduto {
   display: flex;
   object-position: center;
-  padding: 0 5px;
+  padding: 20px;
   width: 100%;
   height: 150px;
 }
