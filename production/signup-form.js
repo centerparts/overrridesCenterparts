@@ -160,8 +160,8 @@ $(document).on('click', '#signIn', () => {
 
 				if(res == "false"){
 					Swal.fire({
-						title: "Erro!",
-						text: "CNPJ inválido ou CNAE não permitido!",
+						title: "Ops!",
+						text: "O seu CNAE não se enquadra no ramo de atividade Comercial permitido para compra, ou CNPJ inválido.",
 						icon: "error"
 					});
 					e.target.style.border = '2px solid red';
