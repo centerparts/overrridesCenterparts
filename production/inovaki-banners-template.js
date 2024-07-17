@@ -257,8 +257,10 @@ async function renderCatalogo() {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      const data = await response.json();
 
+      const data = await response.json()
+      data.sort((a, b) => a.position - b.position);
+      
       if (data && data.length > 0) {
         importCatalogo.insertAdjacentHTML(
           "afterbegin",
