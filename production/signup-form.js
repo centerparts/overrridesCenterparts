@@ -59,11 +59,11 @@ $(document).on('click', '#signIn', () => {
 																		</div>
 																		<div class="form__register-row" style="margin-top: 20px">
 																				<div class="form__register-col">
-																						<p class="form__register-label">Telefone*</p>
+																						<p class="form__register-label">Telefone</p>
 																						<input id="form_phone" name="form_phone" type="text" class="form__register-field" disabled />
 																				</div>
 																				<div class="form__register-col">
-																						<p class="form__register-label">Celular</p>
+																						<p class="form__register-label">Celular*</p>
 																						<input id="form_cellphone" name="form_cellphone" class="form__register-field" type="text" disabled />
 																				</div>
 																		</div>
@@ -257,6 +257,14 @@ $(document).on('click', '.form__register--btn', async (e) => {
 					Swal.fire({
 						title: "Ops!",
 						text: "Verifique os campos digitados.",
+						icon: "error"
+					});
+					break;
+
+				case 422:
+					Swal.fire({
+						title: "Ops!",
+						text: "Campo obrigatório não preenchido ou incorreto.",
 						icon: "error"
 					});
 					break;
