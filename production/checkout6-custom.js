@@ -11,19 +11,27 @@ function paymentUpdateCode(orderForm) {
 		return payment.id == paymentSystem;
 	})
 
-	const cards = ['Visa', 'Mastercard', 'Diners', 'American Express', 'Hipercard', 'Aura', 'Elo', 'JCB', 'Visa Electron', 'Maestro'];
+	// const cards = ['Visa', 'Mastercard', 'Diners', 'American Express', 'Hipercard', 'Aura', 'Elo', 'JCB', 'Visa Electron', 'Maestro'];
 
-	if (cards.includes(paymentSelected.name)) {
-		$('.--text-value-not-reached').remove();
-		$('.cart-fixed').removeClass('--value-not-reached');
+	// if (cards.includes(paymentSelected.name)) {
+	// 	$('.--text-value-not-reached').remove();
+	// 	$('.cart-fixed').removeClass('--value-not-reached');
 
-		return;
-	}
+	// 	return;
+	// }
 
 	var paymentCode = $('.steps-view .payment-method').eq($('.payment-group-item.active').index()).find('div > select').val();
 
-	if (paymentSystem == "125") {
-		paymentCode = `V01`;
+	switch(paymentSystem){
+		case "125":
+			paymentCode = `V01`;
+			break;
+		case "2":
+			paymentCode = `VCD`;
+			break;
+		case "10":
+			paymentCode = `VCC`;
+			break;
 	}
 
 	if (!paymentCode) {
